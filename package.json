@@ -3,21 +3,29 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose --runInBand --testLocationInResults --setupFiles dotenv/config",
+    "test:watch": "npm run test -- --watch",
+    "start": "node -r dotenv/config index.js",
+    "start:watch": "nodemon -r dotenv/config index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ShaneUP1/11_scraping.git"
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ShaneUP1/11_scraping/issues"
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/plugin-syntax-class-properties": "^7.12.1",
+    "@types/jest": "^26.0.19",
+    "@types/pg": "^7.14.7",
+    "eslint": "^7.15.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6"
   },
-  "homepage": "https://github.com/ShaneUP1/11_scraping#readme"
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pg": "^8.5.1"
+  }
 }
